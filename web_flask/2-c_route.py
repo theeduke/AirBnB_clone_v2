@@ -11,24 +11,25 @@ from flask import Flask
 
 app = Flask(__name__)
 
+
 @app.route("/", strict_slashes=False)
 def hello_hbnb():
-    """displays 'hello HBNB' """
-    return("Hello HBNB")
+    """Displays 'Hello HBNB!'."""
+    return ("Hello HBNB!")
+
 
 @app.route("/hbnb", strict_slashes=False)
 def hbnb():
-    """dislays 'HBNB' """
-    return("HBNB")
+    """Displays 'HBNB'."""
+    return ("HBNB")
 
 
-@app.route("/C/<text>", strict_slashes=False)
+@app.route("/c/<text>", strict_slashes=False)
 def c(text):
-    """Displays 'c' following by the valuue of the text
+    """Displays 'C' followed by the value of <text>."""
     text = text.replace("_", " ")
-    """
-    rturn ("c {}".format(text))
+    return ("C {}".format(text))
 
 
-if __name__ == "__main__"
-    app.run("host=0.0.0.0", port=5000)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
